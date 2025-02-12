@@ -1,0 +1,12 @@
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.must-timer{
+    font-size: 25px;
+    font-weight: 600;
+    
+}
