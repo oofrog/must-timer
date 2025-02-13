@@ -2,25 +2,25 @@ const mustTimer = document.querySelector(".must-timer");
 const mustForm = document.querySelector(".must-form");
 const mustInput = document.querySelector(".must-form input");
 
-const MUST_KEY = "must";
+const MUST_KEY = "mustTodo";
 
 let newMustObj = {};
 
 function countDown() {
-  const setTime = newMustObj.time + 1000 * 60 * 60 * 24;
-  const now = Date.now();
-  const diff = setTime - now;
-
-  const hours = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(
-    2,
-    "0"
-  );
-  const minutes = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(
-    2,
-    "0"
-  );
-  const seconds = String(Math.floor((diff / 1000) % 60)).padStart(2, "0");
   if ("text" in newMustObj) {
+    const setTime = newMustObj.time + 1000 * 60 * 60 * 24;
+    const now = Date.now();
+    const diff = setTime - now;
+
+    const hours = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(
+      2,
+      "0"
+    );
+    const minutes = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(
+      2,
+      "0"
+    );
+    const seconds = String(Math.floor((diff / 1000) % 60)).padStart(2, "0");
     mustTimer.innerText = `${hours}:${minutes}:${seconds}`;
   }
 }
@@ -39,6 +39,7 @@ function deleteMust(event) {
 }
 
 function paintMust() {
+  mustForm.classList.add("hidden");
   const div = document.createElement("div");
   div.id = "msut-todo";
   const span = document.createElement("span");
@@ -61,16 +62,15 @@ function handleSubmit(event) {
   };
   paintMust();
   saveMust();
-  mustForm.classList.add("hidden");
 }
 
 mustForm.addEventListener("submit", handleSubmit);
 
-setInterval(countDown, 500);
+setInterval(countDown, 1000);
 
 const savedMust = localStorage.getItem(MUST_KEY);
-if("text" in newMustObj){
-const parsedMust = JSON.parse(savedMust);
-newMustObj = parsedMust;
-paintMust();
+if (savedMust !== null) {
+  const parseMust = JSON.parse(savedMust);
+  newMustObj = parseMust;
+  paintMust();
 }
