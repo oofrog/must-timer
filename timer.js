@@ -41,7 +41,7 @@ function deleteMust(event) {
 function paintMust() {
   mustForm.classList.add("hidden");
   const div = document.createElement("div");
-  div.id = "msut-todo";
+  div.classList.add("must-todo");
   const span = document.createElement("span");
   span.innerText = newMustObj.text;
   const button = document.createElement("button");
