@@ -1,3 +1,4 @@
+@import url(reset.css);
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -5,12 +6,59 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url("dandadan-wallpaper.jpeg");
+  background-size: 100vw;
+  background-position: center bottom;
 }
 .hidden {
   display: none;
 }
 .must-timer {
-  font-size: 48px;
+  font-size: 70px;
   font-weight: 600;
-  margin-top: 33%;
+  color: white;
+  margin:30% 0 10% 0;
+  text-shadow: 0px 0px 20px black;
+}
+.must-form{
+    display: flex;
+    justify-content: center;
+}
+.must-form input {
+  border: 0;
+  width: 70%;
+  border-bottom: 3px solid white;
+  text-align: center;
+  font-size: 30px;
+  padding:7px 0;
+  background-color:rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  text-shadow: 0px 0px 20px black;
+}
+.must-form input::placeholder{
+    color: white;
+    
+}
+.must-todo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.must-todo span {
+  font-size: 50px;
+  font-weight: 600;
+  color: white;
+  margin-right: 10px;
+  text-shadow: 0px 0px 10px black;
+}
+.must-todo button{
+    height: 48px;
+    width: 48px;
+    border-radius: 25%;
+    border: none;
+    box-shadow: 0px 0px 10px black;
+    font-size: 20px;
+    font-weight: 600;
 }
