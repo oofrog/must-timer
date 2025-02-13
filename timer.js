@@ -35,11 +35,11 @@ function deleteMust(event) {
   newMustObj = {};
   saveMust();
   mustTimer.innerText = "24:00:00";
-  mustForm.classList.remove("hidden");
+  mustInput.classList.remove("hidden");
 }
 
 function paintMust() {
-  mustForm.classList.add("hidden");
+  mustInput.classList.add("hidden");
   const div = document.createElement("div");
   div.classList.add("must-todo");
   const span = document.createElement("span");
